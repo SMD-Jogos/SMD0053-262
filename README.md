@@ -34,4 +34,4 @@ Este material é disponibilizado para fins educacionais aos alunos da disciplina
 
 ## Contato
 
-Prof. George Gomes — especialistas@virtual.ufc.br
+Prof. George Gomes — george@virtual.ufc.br
