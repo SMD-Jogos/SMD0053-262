@@ -9,8 +9,9 @@ Material de referência da disciplina **Programação para Jogos I** (SMD0053), 
 | 01 | Apresentação da Disciplina | [PDF](./Aula_01_-_Apresentacao_da_Disciplina.pdf) |
 | 02 | Diversão, Frustração e Flow | [PDF](./Aula_02_-_Diversao_Frustracao_e_Flow.pdf) |
 | 03 | SGDD e Trabalho Final | [PDF](./Aula_03_-_SGDD_e_Trabalho_Final.pdf) |
-| 04 | Setup GitHub Copilot | [PDF](./Aula_04_-_Setup_GitHub_Copilot_-_2026_2.pdf) |
-| 05 | Game Loop | [PDF](./Aula_05_-_Game_Loop_-_2026_2.pdf) |
+| 04 | Setup GitHub Copilot | [PDF](./Aula_04_-_Setup_GitHub_Copilot.pdf) |
+| 05 | Game Loop | [PDF](./Aula_05_-_Game_Loop.pdf) |
+| 06 | Dissecando o Pong da IA | [PDF](./Aula_06_-_Dissecando_o_Pong_da_IA.pdf) |
 
 Código de exemplo usado em aula está em [`Código/`](./Código).
 
