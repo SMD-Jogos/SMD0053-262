@@ -12,6 +12,7 @@ Material de referência da disciplina **Programação para Jogos I** (SMD0053), 
 | 04 | Setup GitHub Copilot | [PDF](./Aula_04_-_Setup_GitHub_Copilot.pdf) |
 | 05 | Game Loop | [PDF](./Aula_05_-_Game_Loop.pdf) |
 | 06 | Dissecando o Pong da IA | [PDF](./Aula_06_-_Dissecando_o_Pong_da_IA.pdf) |
+| 07 | Quem controla o tempo do jogo | [PDF](./Aula_07_-_Quem_controla_o_tempo_do_jogo.pdf) |
 
 Código de exemplo usado em aula está em [`Código/`](./Código).
 
