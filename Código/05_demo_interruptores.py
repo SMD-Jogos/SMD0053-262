@@ -1,5 +1,5 @@
 # DEMO — OS INTERRUPTORES: o que cada parte do ciclo faz pelo jogo
-# Rode com: python demo_interruptores.py  (requer pygame-ce)
+# Rode com: python 05_demo_interruptores.py  (requer pygame-ce)
 #
 # A cada volta do loop, três coisas acontecem: o jogo ESCUTA o jogador,
 # MOVE o mundo e DESENHA a tela. Esta demo desliga cada uma ao vivo:

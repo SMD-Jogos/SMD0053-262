@@ -1,5 +1,5 @@
 # DEMO — O tiro acertou a nave?  (ponto x volume delimitador)
-# Rode com: python demo_ponto_x_volume.py   (requer pygame-ce)
+# Rode com: python 08_demo_volumes_colisao.py   (requer pygame-ce)
 #
 # Mova o mouse: ele é o "tiro". Cinco painéis testam o MESMO foguete
 # com volumes diferentes. Cada painel mostra ACERTOU / ERROU e quantas

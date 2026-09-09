@@ -13,8 +13,20 @@ Material de referência da disciplina **Programação para Jogos I** (SMD0053), 
 | 05 | Game Loop | [PDF](./Aula_05_-_Game_Loop.pdf) |
 | 06 | Dissecando o Pong da IA | [PDF](./Aula_06_-_Dissecando_o_Pong_da_IA.pdf) |
 | 07 | Quem controla o tempo do jogo | [PDF](./Aula_07_-_Quem_controla_o_tempo_do_jogo.pdf) |
+| 08 | Colisão | [PDF](./Aula_08_-_Colisao.pdf) |
 
-Código de exemplo usado em aula está em [`Código/`](./Código).
+Código de exemplo usado em aula está em [`Código/`](./Código):
+
+| Aula | Código | O que demonstra |
+|---|---|---|
+| 05 | [`05_game_loop_minimo.py`](./Código/05_game_loop_minimo.py) | O ciclo mínimo: escutar, mover, desenhar. `W`/`S` movem a raquete |
+| 05 | [`05_demo_interruptores.py`](./Código/05_demo_interruptores.py) | Desliga cada etapa do ciclo ao vivo: `E` escutar, `M` mover, `D` desenhar |
+| 06 | [`06_pong_da_ia.py`](./Código/06_pong_da_ia.py) | O Pong gerado pela IA, com placar e oponente automático. `↑`/`↓` |
+| 07 | [`07_demo_maquinas_diferentes.py`](./Código/07_demo_maquinas_diferentes.py) | O problema: `x += 5` por frame roda em velocidades diferentes em cada máquina. `1`-`4` trocam o FPS-alvo, `0` desliga o freio (vsync) |
+| 07 | [`07_pong_loop_em_funcoes.py`](./Código/07_pong_loop_em_funcoes.py) | O mesmo jogo separado em `inputs()`, `update()` e `draw()` |
+| 07 | [`07_pong_delta_time.py`](./Código/07_pong_delta_time.py) | Velocidade em pixels por segundo, independente da taxa de quadros |
+| 08 | [`08_pong_tunelamento.py`](./Código/08_pong_tunelamento.py) | Bola veloz atravessa a raquete; `T` engasga o quadro e força o bug |
+| 08 | [`08_demo_volumes_colisao.py`](./Código/08_demo_volumes_colisao.py) | Círculo, AABB, OBB, fecho convexo e malha lado a lado. `←`/`→` gira, `T`, `R` |
 
 O plano de ensino completo está em [`Plano_de_Ensino_2026_2.pdf`](./Plano_de_Ensino_2026_2.pdf).
 
