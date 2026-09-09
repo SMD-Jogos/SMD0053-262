@@ -32,14 +32,15 @@ oponente_velocidade = 300  # 5 * 60
 bola_x = 400
 bola_y = 300
 bola_raio = 10
-bola_vx = 300  # 5 * 60
-bola_vy = 0  # 5 * 60
+bola_vx = 2500  # 5 * 60
+bola_vy = 0 # 5 * 60
 
 # Placar
 placar_jogador = 0
 placar_oponente = 0
 
 rodando = True
+engasgando = False
 
 def reiniciar_bola():
     global bola_x, bola_y, bola_vx, bola_vy
@@ -49,7 +50,7 @@ def reiniciar_bola():
     bola_vy = 300 * random.choice([1, -1])
 
 def inputs(dt):
-    global rodando, jogador_y
+    global rodando, engasgando, jogador_y
     
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
@@ -65,6 +66,8 @@ def inputs(dt):
         jogador_y = 0
     if jogador_y > ALTURA - jogador_altura:
         jogador_y = ALTURA - jogador_altura
+
+    engasgando = teclas[pygame.K_t]
 
 def update(dt):
     global oponente_y, bola_x, bola_y, bola_vx, bola_vy, placar_jogador, placar_oponente
@@ -87,8 +90,13 @@ def update(dt):
     oponente_rect = pygame.Rect(oponente_x, oponente_y,
                                 oponente_largura, oponente_altura)
 
-    if bola_rect.colliderect(jogador_rect) or bola_rect.colliderect(oponente_rect):
-        bola_vx = -bola_vx
+    if bola_rect.colliderect(jogador_rect):
+        bola_vx = abs(bola_vx)                 # SEMPRE para a direita
+        #bola_x = jogador_x + jogador_largura + bola_raio   # sai da raquete JÁ
+
+    if bola_rect.colliderect(oponente_rect):
+        bola_vx = -abs(bola_vx)                # SEMPRE para a esquerda
+        #bola_x = oponente_x - bola_raio
 
     if bola_x < 0:
         placar_oponente += 1
@@ -119,5 +127,7 @@ while rodando:
     inputs(dt)
     update(dt)
     draw()
+    if engasgando:
+        pygame.time.delay(250)
 
 pygame.quit()
