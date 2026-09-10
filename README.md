@@ -14,6 +14,7 @@ Material de referência da disciplina **Programação para Jogos I** (SMD0053), 
 | 06 | Dissecando o Pong da IA | [PDF](./Aula_06_-_Dissecando_o_Pong_da_IA.pdf) |
 | 07 | Quem controla o tempo do jogo | [PDF](./Aula_07_-_Quem_controla_o_tempo_do_jogo.pdf) |
 | 08 | Colisão | [PDF](./Aula_08_-_Colisao.pdf) |
+| 09 | Quatro jeitos de controlar o tempo | [PDF](./Aula_09_-_Quatro_jeitos_de_controlar_o_tempo.pdf) |
 
 Código de exemplo usado em aula está em [`Código/`](./Código):
 
@@ -27,6 +28,8 @@ Código de exemplo usado em aula está em [`Código/`](./Código):
 | 07 | [`07_pong_delta_time.py`](./Código/07_pong_delta_time.py) | Velocidade em pixels por segundo, independente da taxa de quadros |
 | 08 | [`08_pong_tunelamento.py`](./Código/08_pong_tunelamento.py) | Bola veloz atravessa a raquete; `T` engasga o quadro e força o bug |
 | 08 | [`08_demo_volumes_colisao.py`](./Código/08_demo_volumes_colisao.py) | Círculo, AABB, OBB, fecho convexo e malha lado a lado. `←`/`→` gira, `T`, `R` |
+| 09 | [`09_demo_nao_determinismo.py`](./Código/09_demo_nao_determinismo.py) | Mesmo código, mesma jogada: `dt` fixo vs. irregular divergem a cada quique. `1`-`4` trocam o modo, `R` reinicia, `P` pausa |
+| 09 | [`09_demo_movimento_fixo_desenho_variavel.py`](./Código/09_demo_movimento_fixo_desenho_variavel.py) | Movimento em passos fixos de 16ms, desenho quando a máquina consegue. `ESPAÇO` avança um passo, `T` engasga o desenho, `A` automático |
 
 O plano de ensino completo está em [`Plano_de_Ensino_2026_2.pdf`](./Plano_de_Ensino_2026_2.pdf).
 
