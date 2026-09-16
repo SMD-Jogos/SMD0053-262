@@ -15,6 +15,7 @@ Material de referência da disciplina **Programação para Jogos I** (SMD0053), 
 | 07 | Quem controla o tempo do jogo | [PDF](./Aula_07_-_Quem_controla_o_tempo_do_jogo.pdf) |
 | 08 | Colisão | [PDF](./Aula_08_-_Colisao.pdf) |
 | 09 | Quatro jeitos de controlar o tempo | [PDF](./Aula_09_-_Quatro_jeitos_de_controlar_o_tempo.pdf) |
+| 10 | Do laço às entidades | [PDF](./Aula_10_-_Do_laco_as_entidades.pdf) |
 
 Código de exemplo usado em aula está em [`Código/`](./Código):
 
@@ -30,6 +31,7 @@ Código de exemplo usado em aula está em [`Código/`](./Código):
 | 08 | [`08_demo_volumes_colisao.py`](./Código/08_demo_volumes_colisao.py) | Círculo, AABB, OBB, fecho convexo e malha lado a lado. `←`/`→` gira, `T`, `R` |
 | 09 | [`09_demo_nao_determinismo.py`](./Código/09_demo_nao_determinismo.py) | Mesmo código, mesma jogada: `dt` fixo vs. irregular divergem a cada quique. `1`-`4` trocam o modo, `R` reinicia, `P` pausa |
 | 09 | [`09_demo_movimento_fixo_desenho_variavel.py`](./Código/09_demo_movimento_fixo_desenho_variavel.py) | Movimento em passos fixos de 16ms, desenho quando a máquina consegue. `ESPAÇO` avança um passo, `T` engasga o desenho, `A` automático |
+| 10 | [`10_pong_passo_fixo.py`](./Código/10_pong_passo_fixo.py) | O Pong com o laço de passo fixo: acumulador, `while` interno com `update(PASSO)` e trava de 0,25 s. Nada mudou dentro de `inputs()`, `update()` e `draw()` |
 
 O plano de ensino completo está em [`Plano_de_Ensino_2026_2.pdf`](./Plano_de_Ensino_2026_2.pdf).
 
