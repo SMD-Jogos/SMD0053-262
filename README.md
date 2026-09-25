@@ -17,6 +17,7 @@ Material de referência da disciplina **Programação para Jogos I** (SMD0053), 
 | 09 | Quatro jeitos de controlar o tempo | [PDF](./Aula_09_-_Quatro_jeitos_de_controlar_o_tempo.pdf) |
 | 10 | Do laço às entidades | [PDF](./Aula_10_-_Do_laco_as_entidades.pdf) |
 | 11 | O Pong em classes | [PDF](./Aula_11_-_O_Pong_em_classes.pdf) |
+| 12 | As entidades do seu jogo | [PDF](./Aula_12_-_As_entidades_do_seu_jogo.pdf) |
 
 Código de exemplo usado em aula está em [`Código/`](./Código):
 
