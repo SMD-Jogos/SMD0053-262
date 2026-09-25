@@ -1,24 +1,37 @@
 # Entidades do jogo — [nome do jogo]
 
-**Integrantes:** [nome completo], [nome completo, se for dupla]
+**Integrantes:** [nomes]
 
-**Checkpoint 2 · Programação para Jogos I · Apresentação: 25/09 · Entrega: sexta, 02/10/2026**
-
-**IA liberada com uso crítico: você vai precisar explicar cada escolha**
+**Checkpoint 2 · Programação para Jogos I · Entrega: sexta, 02/10/2026**
 
 > Copie este arquivo para a raiz do repositório do seu jogo com o nome `ENTIDADES.md`, preencha e faça commit e push até sexta, 02/10. Depois, envie o link do repositório.
 
 ## 1. Entidades
 
-O que se move, muda de estado ou reage a algo? Uma linha por entidade.
+O que se move, muda de estado ou reage a algo? Uma por linha.
 
-| Entidade | Propriedades (o que sabe sobre si) | Comportamentos (o que faz a cada quadro) |
-|---|---|---|
-| ex.: Jogador | posição, velocidade, vidas | lê a entrada, se move, desenha |
-| | | |
-| | | |
+-
+-
 
-## 2. Colisões
+## 2. Propriedades
+
+O que cada entidade sabe sobre si?
+
+| Entidade | Propriedades |
+|---|---|
+| ex.: Jogador | posição, velocidade, vidas |
+| | |
+
+## 3. Comportamentos
+
+O que cada entidade faz a cada quadro?
+
+| Entidade | Comportamentos |
+|---|---|
+| ex.: Jogador | lê a entrada, se move, desenha |
+| | |
+
+## 4. Colisões
 
 O que colide com o quê? A reação é igual para todo par?
 
@@ -28,26 +41,20 @@ O que colide com o quê? A reação é igual para todo par?
 
 A reação é a mesma para todos os pares? Se não, onde ela muda:
 
-## 3. Comunicação
+## 5. Comunicação
 
 Uma entidade aciona ou lê a outra diretamente, ou por um terceiro (o jogo, o mundo, um gerenciador)?
 
 - [quem] → [quem]: [direto ou por quem?]
 
-## 4. Falsas entidades
+## 6. Falsas entidades
 
 Algo parece entidade, mas não se atualiza sozinho (placar, cenário, som, câmera)?
 
 -
 
-## 5. Comportamentos repetidos
+## 7. Repetições
 
 Duas ou mais entidades repetem o mesmo comportamento? Qual, e em quais?
-
--
-
-## 6. O que travou
-
-Qual pergunta foi mais difícil de responder, e por quê?
 
 -
