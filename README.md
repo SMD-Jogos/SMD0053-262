@@ -21,6 +21,7 @@ Material de referência da disciplina **Programação para Jogos I** (SMD0053), 
 | 13 | Desenvolvimento guiado por especificação | [PDF](./Aula_13_-_Desenvolvimento_guiado_por_especificacao.pdf) · [repositório ze-peixeira](https://github.com/SMD-Jogos/ze-peixeira) |
 | 15 | Componentes I (Prof. Alysson Diniz) | [PDF](./Aula_15_-_Componentes_I.pdf) |
 | 16 | Componentes I — continuação | — |
+| 17 | O Pong em componentes | [PDF](./Aula_17_-_O_Pong_em_componentes.pdf) |
 
 Código de exemplo usado em aula está em [`Código/`](./Código):
 
@@ -38,6 +39,8 @@ Código de exemplo usado em aula está em [`Código/`](./Código):
 | 09 | [`09_demo_movimento_fixo_desenho_variavel.py`](./Código/09_demo_movimento_fixo_desenho_variavel.py) | Movimento em passos fixos de 16ms, desenho quando a máquina consegue. `ESPAÇO` avança um passo, `T` engasga o desenho, `A` automático |
 | 10 | [`10_pong_passo_fixo.py`](./Código/10_pong_passo_fixo.py) | O Pong com o laço de passo fixo: acumulador, `while` interno com `update(PASSO)` e trava de 0,25 s. Nada mudou dentro de `inputs()`, `update()` e `draw()` |
 | 11 | [`11_pong_oo.py`](./Código/11_pong_oo.py) | O mesmo Pong refatorado em classes: `Entidade` abstrata, `Bola` e `Raquete` (com subclasses `RaqueteDoJogador`/`RaqueteDoOponente`) reescrevendo `update()`/`desenhar()` |
+| 17 | [`17_pong_componentes.py`](./Código/17_pong_componentes.py) | O mesmo Pong montado com componentes: uma `Entidade` genérica com três encaixes (controle, física, gráfico). As duas raquetes são a mesma classe; só o controle muda. Uma linha comentada transforma o jogo em dois jogadores |
+| 17 | [`17_monte_a_entidade.py`](./Código/17_monte_a_entidade.py) | Arraste peças para os encaixes da `Entidade` e veja a entidade montada rodando. `ESPAÇO` revela qual entidade é, `R` recomeça |
 
 O plano de ensino completo está em [`Plano_de_Ensino_2026_2.pdf`](./Plano_de_Ensino_2026_2.pdf).
 
