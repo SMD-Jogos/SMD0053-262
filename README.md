@@ -19,6 +19,8 @@ Material de referência da disciplina **Programação para Jogos I** (SMD0053), 
 | 11 | O Pong em classes | [PDF](./Aula_11_-_O_Pong_em_classes.pdf) |
 | 12 | As entidades do seu jogo | [PDF](./Aula_12_-_As_entidades_do_seu_jogo.pdf) |
 | 13 | Desenvolvimento guiado por especificação | [PDF](./Aula_13_-_Desenvolvimento_guiado_por_especificacao.pdf) · [repositório ze-peixeira](https://github.com/SMD-Jogos/ze-peixeira) |
+| 15 | Componentes I (Prof. Alysson Diniz) | [PDF](./Aula_15_-_Componentes_I.pdf) |
+| 16 | Componentes I — continuação | — |
 
 Código de exemplo usado em aula está em [`Código/`](./Código):
 
