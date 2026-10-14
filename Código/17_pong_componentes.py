@@ -154,8 +154,11 @@ class Placar:
         self.fonte = pygame.font.Font(None, 74)
 
     def desenhar(self, tela):
-        texto = self.fonte.render(f"{self.jogador}   {self.oponente}", True, BRANCO)
-        tela.blit(texto, (330, 20))
+        # cada número do seu lado da rede, a 40 px dela
+        esquerdo = self.fonte.render(str(self.jogador), True, BRANCO)
+        direito = self.fonte.render(str(self.oponente), True, BRANCO)
+        tela.blit(esquerdo, esquerdo.get_rect(topright=(LARGURA / 2 - 40, 20)))
+        tela.blit(direito, direito.get_rect(topleft=(LARGURA / 2 + 40, 20)))
 
 
 class World:
@@ -169,7 +172,7 @@ class World:
                              controle=None,
                              fisica=FisicaBola(),
                              grafico=GraficoCirculo())
-        self.bola.vx = VELOCIDADE_BOLA
+        self.reiniciar_bola()   # começa na diagonal, como depois de um ponto
 
         # As duas raquetes sao a MESMA classe. So o controle muda.
         self.jogador = Entidade(30, 250, LARGURA_RAQUETE, ALTURA_RAQUETE,
