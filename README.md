@@ -22,6 +22,7 @@ Material de referência da disciplina **Programação para Jogos I** (SMD0053), 
 | 15 | Componentes I (Prof. Alysson Diniz) | [PDF](./Aula_15_-_Componentes_I.pdf) |
 | 16 | Componentes I — continuação | — |
 | 17 | O Pong em componentes | [PDF](./Aula_17_-_O_Pong_em_componentes.pdf) |
+| 18 | Observer: conquistas no Pong | [PDF](./Aula_18_-_Observer_conquistas_no_Pong.pdf) |
 
 Código de exemplo usado em aula está em [`Código/`](./Código):
 
@@ -41,6 +42,9 @@ Código de exemplo usado em aula está em [`Código/`](./Código):
 | 11 | [`11_pong_oo.py`](./Código/11_pong_oo.py) | O mesmo Pong refatorado em classes: `Entidade` abstrata, `Bola` e `Raquete` (com subclasses `RaqueteDoJogador`/`RaqueteDoOponente`) reescrevendo `update()`/`desenhar()` |
 | 17 | [`17_pong_componentes.py`](./Código/17_pong_componentes.py) | O mesmo Pong montado com componentes: uma `Entidade` genérica com três encaixes (controle, física, gráfico). As duas raquetes são a mesma classe; só o controle muda. Uma linha comentada transforma o jogo em dois jogadores |
 | 17 | [`17_monte_a_entidade.py`](./Código/17_monte_a_entidade.py) | Arraste peças para os encaixes da `Entidade` e veja a entidade montada rodando. `ESPAÇO` revela qual entidade é, `R` recomeça |
+| 18 | [`18_pong_conquistas_no_world.py`](./Código/18_pong_conquistas_no_world.py) | O problema: rally, hat-trick e "levar 3 seguidos" escritos dentro de `colisoes()`. O método vai de 14 para 38 linhas e o World guarda os contadores |
+| 18 | [`18_pong_observer.py`](./Código/18_pong_observer.py) | O padrão Observer: `colisoes()` só emite `notificar("rebatida"/"ponto", autor)`; o `Placar` e a `ConquistaRally` são observadores inscritos no `Sujeito` |
+| 18 | [`18_pong_conquistas.py`](./Código/18_pong_conquistas.py) | Nove conquistas com seis classes observadoras; a mesma classe serve aos dois lados (ex.: hat-trick e levar 3 seguidos). Comentar o laço de inscrição desliga todas |
 
 O plano de ensino completo está em [`Plano_de_Ensino_2026_2.pdf`](./Plano_de_Ensino_2026_2.pdf).
 
