@@ -14,7 +14,7 @@ LARGURA_RAQUETE = 15
 ALTURA_RAQUETE = 100
 DIAMETRO_BOLA = 20
 VELOCIDADE_BOLA = 300
-# Na Aula 17 o oponente andava a 300 e nunca errava; a 265 ele erra de vez em quando.
+# Na Aula 17 o oponente andava a 300 e nunca errava; a 205 ele erra com frequência, para dar para testar as conquistas.
 VELOCIDADE_OPONENTE = 205
 
 COR_RUIM = (235, 100, 80)
