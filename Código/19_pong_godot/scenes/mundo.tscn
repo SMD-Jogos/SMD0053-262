@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://buguapvdesh3d"]
+
+[ext_resource type="Script" uid="uid://b8onvkiv3ex6l" path="res://scripts/mundo/world.gd" id="1_world"]
+[ext_resource type="PackedScene" path="res://scenes/raquete.tscn" id="2_raquete"]
+[ext_resource type="Script" uid="uid://yll17b5y0feu" path="res://scripts/bola/bola.gd" id="3_bola"]
+[ext_resource type="Script" uid="uid://bcutnhnec3yux" path="res://scripts/gol/gol.gd" id="4_gol"]
+[ext_resource type="Script" uid="uid://cpecta6kdvk82" path="res://scripts/raquete/controle_teclado.gd" id="5_teclado"]
+[ext_resource type="Script" uid="uid://hy0q5ugfqdwg" path="res://scripts/raquete/controle_seguidor.gd" id="6_seguidor"]
+[ext_resource type="Script" uid="uid://b0wfafmijejos" path="res://scripts/placar/placar.gd" id="7_placar"]
+[ext_resource type="Script" uid="uid://dpdjdvhxcgdb0" path="res://scripts/avisos/avisos.gd" id="8_avisos"]
+[ext_resource type="Script" uid="uid://cngjylxt8t5dd" path="res://scripts/conquistas/conquista_rally.gd" id="9_rally"]
+[ext_resource type="Script" uid="uid://dsrpbtq4d8v5o" path="res://scripts/conquistas/conquista_pontos_seguidos.gd" id="10_seguidos"]
+[ext_resource type="Script" uid="uid://bdns1080h8ph1" path="res://scripts/conquistas/conquista_primeiro_ponto.gd" id="11_primeiro"]
+[ext_resource type="Script" uid="uid://bkivgloj2xvy4" path="res://scripts/conquistas/conquista_rebatidas_seguidas.gd" id="12_rebatidas"]
+[ext_resource type="Script" uid="uid://gr8dd2ms3kae" path="res://scripts/conquistas/conquista_ponto_sem_toque.gd" id="13_sem_toque"]
+[ext_resource type="Script" uid="uid://jw58fjoh48vs" path="res://scripts/conquistas/conquista_virada.gd" id="14_virada"]
+[ext_resource type="Script" uid="uid://5maeut55dmae" path="res://scripts/parede/parede.gd" id="15_parede"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bola"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gol"]
+size = Vector2(50, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_parede"]
+size = Vector2(800, 20)
+
+[node name="World" type="Node2D" unique_id=2104701062]
+script = ExtResource("1_world")
+
+[node name="Rede" type="ColorRect" parent="." unique_id=1965021944]
+offset_left = 399.0
+offset_right = 401.0
+offset_bottom = 600.0
+mouse_filter = 2
+
+[node name="Placar" type="Label" parent="." unique_id=1330790280]
+offset_top = 20.0
+offset_right = 360.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("7_placar")
+
+[node name="Oponente" type="Label" parent="Placar" unique_id=1066604371]
+layout_mode = 0
+offset_left = 440.0
+offset_right = 800.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="Jogador" parent="." unique_id=1527697164 instance=ExtResource("2_raquete")]
+position = Vector2(30, 250)
+autor = "jogador"
+
+[node name="ControleTeclado" type="Node" parent="Jogador" unique_id=1469720433]
+script = ExtResource("5_teclado")
+
+[node name="Oponente" parent="." unique_id=422810339 instance=ExtResource("2_raquete")]
+position = Vector2(755, 250)
+autor = "oponente"
+direcao = -1
+
+[node name="ControleSeguidor" type="Node" parent="Oponente" unique_id=467066967 node_paths=PackedStringArray("alvo")]
+script = ExtResource("6_seguidor")
+alvo = NodePath("../../Bola")
+
+[node name="Bola" type="Area2D" parent="." unique_id=1629096331]
+position = Vector2(400, 300)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_bola")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bola" unique_id=1488472465]
+shape = SubResource("CircleShape2D_bola")
+
+[node name="GolEsquerdo" type="Area2D" parent="." unique_id=1205794609]
+position = Vector2(-50, 0)
+collision_mask = 2
+script = ExtResource("4_gol")
+autor = "oponente"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GolEsquerdo" unique_id=1500920030]
+position = Vector2(25, 300)
+shape = SubResource("RectangleShape2D_gol")
+
+[node name="GolDireito" type="Area2D" parent="." unique_id=909327981]
+position = Vector2(820, 0)
+collision_mask = 2
+script = ExtResource("4_gol")
+autor = "jogador"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GolDireito" unique_id=733524577]
+position = Vector2(25, 300)
+shape = SubResource("RectangleShape2D_gol")
+
+[node name="ParedeCima" type="Area2D" parent="." unique_id=1331022388]
+position = Vector2(400, -10)
+collision_mask = 2
+script = ExtResource("15_parede")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeCima" unique_id=1205222752]
+shape = SubResource("RectangleShape2D_parede")
+
+[node name="ParedeBaixo" type="Area2D" parent="." unique_id=1960598603]
+position = Vector2(400, 610)
+collision_mask = 2
+script = ExtResource("15_parede")
+direcao = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeBaixo" unique_id=1977541254]
+shape = SubResource("RectangleShape2D_parede")
+
+[node name="Avisos" type="VBoxContainer" parent="." unique_id=1710339021]
+offset_top = 300.0
+offset_right = 800.0
+offset_bottom = 525.0
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 2
+script = ExtResource("8_avisos")
+
+[node name="Conquistas" type="Node" parent="." unique_id=1330187086]
+
+[node name="ConquistaPrimeiroPonto" type="Node" parent="Conquistas" unique_id=1869108959 node_paths=PackedStringArray("avisos")]
+script = ExtResource("11_primeiro")
+avisos = NodePath("../../Avisos")
+
+[node name="ConquistaRebatidasSeguidas" type="Node" parent="Conquistas" unique_id=785557639 node_paths=PackedStringArray("avisos")]
+script = ExtResource("12_rebatidas")
+avisos = NodePath("../../Avisos")
+
+[node name="ConquistaRally" type="Node" parent="Conquistas" unique_id=77782979 node_paths=PackedStringArray("avisos")]
+script = ExtResource("9_rally")
+avisos = NodePath("../../Avisos")
+
+[node name="ConquistaHatTrick" type="Node" parent="Conquistas" unique_id=661247639 node_paths=PackedStringArray("avisos")]
+script = ExtResource("10_seguidos")
+quem = "jogador"
+texto = "Hat-trick!"
+avisos = NodePath("../../Avisos")
+
+[node name="ConquistaLevouTresSeguidos" type="Node" parent="Conquistas" unique_id=218650683 node_paths=PackedStringArray("avisos")]
+script = ExtResource("10_seguidos")
+quem = "oponente"
+texto = "Levou 3 seguidos"
+ruim = true
+avisos = NodePath("../../Avisos")
+
+[node name="ConquistaPontoSemToque" type="Node" parent="Conquistas" unique_id=1739847739 node_paths=PackedStringArray("avisos")]
+script = ExtResource("13_sem_toque")
+quem = "jogador"
+texto = "Ponto sem o oponente tocar"
+avisos = NodePath("../../Avisos")
+
+[node name="ConquistaPontoSemVoceTocar" type="Node" parent="Conquistas" unique_id=1387045449 node_paths=PackedStringArray("avisos")]
+script = ExtResource("13_sem_toque")
+quem = "oponente"
+texto = "Ponto sem você tocar"
+ruim = true
+avisos = NodePath("../../Avisos")
+
+[node name="ConquistaVirada" type="Node" parent="Conquistas" unique_id=413918698 node_paths=PackedStringArray("avisos")]
+script = ExtResource("14_virada")
+quem = "jogador"
+texto = "Virada!"
+avisos = NodePath("../../Avisos")
+
+[node name="ConquistaLevouVirada" type="Node" parent="Conquistas" unique_id=573161517 node_paths=PackedStringArray("avisos")]
+script = ExtResource("14_virada")
+quem = "oponente"
+texto = "Levou a virada"
+ruim = true
+avisos = NodePath("../../Avisos")
+
+[connection signal="ponto" from="." to="Placar" method="_on_ponto"]

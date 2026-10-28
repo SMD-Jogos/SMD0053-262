@@ -23,6 +23,7 @@ Material de referência da disciplina **Programação para Jogos I** (SMD0053), 
 | 16 | Componentes I — continuação | — |
 | 17 | O Pong em componentes | [PDF](./Aula_17_-_O_Pong_em_componentes.pdf) |
 | 18 | Observer: conquistas no Pong | [PDF](./Aula_18_-_Observer_conquistas_no_Pong.pdf) |
+| 19 | Observer no Godot: sinais | [PDF](./Aula_19_-_Observer_no_Godot_sinais.pdf) |
 
 Código de exemplo usado em aula está em [`Código/`](./Código):
 
@@ -45,6 +46,7 @@ Código de exemplo usado em aula está em [`Código/`](./Código):
 | 18 | [`18_pong_conquistas_no_world.py`](./Código/18_pong_conquistas_no_world.py) | O problema: rally, hat-trick e "levar 3 seguidos" escritos dentro de `colisoes()`. O método vai de 14 para 38 linhas e o World guarda os contadores |
 | 18 | [`18_pong_observer.py`](./Código/18_pong_observer.py) | O padrão Observer: `colisoes()` só emite `notificar("rebatida"/"ponto", autor)`; o `Placar` e a `ConquistaRally` são observadores inscritos no `Sujeito` |
 | 18 | [`18_pong_conquistas.py`](./Código/18_pong_conquistas.py) | Nove conquistas com seis classes observadoras; a mesma classe serve aos dois lados (ex.: hat-trick e levar 3 seguidos). Comentar o laço de inscrição desliga todas |
+| 19 | [`19_pong_godot/`](./Código/19_pong_godot) | O mesmo Pong no Godot 4.7: colisão por `Area2D` com camadas e máscaras, sinais (`ponto`, `rebatida`, `saque`) como Observer e as nove conquistas como nós. Abrir o `project.godot` no Godot |
 
 O plano de ensino completo está em [`Plano_de_Ensino_2026_2.pdf`](./Plano_de_Ensino_2026_2.pdf).
 
