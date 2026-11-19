@@ -19,11 +19,15 @@ Material de referência da disciplina **Programação para Jogos I** (SMD0053), 
 | 11 | O Pong em classes | [PDF](./Aula_11_-_O_Pong_em_classes.pdf) |
 | 12 | As entidades do seu jogo | [PDF](./Aula_12_-_As_entidades_do_seu_jogo.pdf) |
 | 13 | Desenvolvimento guiado por especificação | [PDF](./Aula_13_-_Desenvolvimento_guiado_por_especificacao.pdf) · [repositório ze-peixeira](https://github.com/SMD-Jogos/ze-peixeira) |
-| 15 | Componentes I (Prof. Alysson Diniz) | [PDF](./Aula_15_-_Componentes_I.pdf) |
-| 16 | Componentes I — continuação | — |
+| 15 | Componentes I | [PDF](./Aula_15_-_Componentes_I.pdf) |
+| 16 | Componentes II | [PDF](./Aula_16_-_Componentes_II.pdf) |
 | 17 | O Pong em componentes | [PDF](./Aula_17_-_O_Pong_em_componentes.pdf) |
 | 18 | Observer: conquistas no Pong | [PDF](./Aula_18_-_Observer_conquistas_no_Pong.pdf) |
 | 19 | Observer no Godot: sinais | [PDF](./Aula_19_-_Observer_no_Godot_sinais.pdf) |
+| 20 | Feedback dos repositórios e Singleton | [PDF](./Aula_20_-_Feedback_e_Singleton.pdf) |
+| 21 | Máquinas de Estados I | [PDF](./Aula_21_-_Maquinas_de_Estados_I.pdf) |
+| 22 | Máquinas de Estados II | [PDF](./Aula_22_-_Maquinas_de_Estados_II.pdf) |
+| 23 | Particionamento do espaço | [PDF](./Aula_23_-_Particionamento_do_Espaco.pdf) |
 
 Código de exemplo usado em aula está em [`Código/`](./Código):
 
@@ -41,12 +45,19 @@ Código de exemplo usado em aula está em [`Código/`](./Código):
 | 09 | [`09_demo_movimento_fixo_desenho_variavel.py`](./Código/09_demo_movimento_fixo_desenho_variavel.py) | Movimento em passos fixos de 16ms, desenho quando a máquina consegue. `ESPAÇO` avança um passo, `T` engasga o desenho, `A` automático |
 | 10 | [`10_pong_passo_fixo.py`](./Código/10_pong_passo_fixo.py) | O Pong com o laço de passo fixo: acumulador, `while` interno com `update(PASSO)` e trava de 0,25 s. Nada mudou dentro de `inputs()`, `update()` e `draw()` |
 | 11 | [`11_pong_oo.py`](./Código/11_pong_oo.py) | O mesmo Pong refatorado em classes: `Entidade` abstrata, `Bola` e `Raquete` (com subclasses `RaqueteDoJogador`/`RaqueteDoOponente`) reescrevendo `update()`/`desenhar()` |
+| 16 | [`16_componentes_antes.py`](./Código/16_componentes_antes.py) | Player, Enemy e FlyingEnemy, cada um com o seu próprio `draw()`: o mesmo desenho repetido três vezes. `W`/`A`/`S`/`D` movem o jogador |
+| 16 | [`16_componentes_render.py`](./Código/16_componentes_render.py) | O desenho sai das entidades para um `RenderComponent` compartilhado; o laço chama `entidade.renderer.draw()` |
 | 17 | [`17_pong_componentes.py`](./Código/17_pong_componentes.py) | O mesmo Pong montado com componentes: uma `Entidade` genérica com três encaixes (controle, física, gráfico). As duas raquetes são a mesma classe; só o controle muda. Uma linha comentada transforma o jogo em dois jogadores |
 | 17 | [`17_monte_a_entidade.py`](./Código/17_monte_a_entidade.py) | Arraste peças para os encaixes da `Entidade` e veja a entidade montada rodando. `ESPAÇO` revela qual entidade é, `R` recomeça |
 | 18 | [`18_pong_conquistas_no_world.py`](./Código/18_pong_conquistas_no_world.py) | O problema: rally, hat-trick e "levar 3 seguidos" escritos dentro de `colisoes()`. O método vai de 14 para 38 linhas e o World guarda os contadores |
 | 18 | [`18_pong_observer.py`](./Código/18_pong_observer.py) | O padrão Observer: `colisoes()` só emite `notificar("rebatida"/"ponto", autor)`; o `Placar` e a `ConquistaRally` são observadores inscritos no `Sujeito` |
 | 18 | [`18_pong_conquistas.py`](./Código/18_pong_conquistas.py) | Nove conquistas com seis classes observadoras; a mesma classe serve aos dois lados (ex.: hat-trick e levar 3 seguidos). Comentar o laço de inscrição desliga todas |
 | 19 | [`19_pong_godot/`](./Código/19_pong_godot) | O mesmo Pong no Godot 4.7: colisão por `Area2D` com camadas e máscaras, sinais (`ponto`, `rebatida`, `saque`) como Observer e as nove conquistas como nós. Abrir o `project.godot` no Godot |
+| 22 | [`22_troll_fsm.py`](./Código/22_troll_fsm.py) | State Pattern no terminal: o Troll delega o comportamento ao estado atual (`StateSleep`) e troca de estado com `change_state()`. `1` avança o turno, `0` sai |
+| 23 | [`23_cardume.py`](./Código/23_cardume.py) | Clique na água e o susto se espalha pelo cardume: cada peixe precisa achar os vizinhos. `1`–`4` trocam força bruta / grid / quadtree / k-d tree, `R` espalha de novo |
+| 23 | [`23_forca_bruta_x_grid.py`](./Código/23_forca_bruta_x_grid.py) | Cada bolinha procura vizinhas num raio: força bruta contra grid. `G` alterna, `+`/`-` bolinhas, `[`/`]` tamanho da célula, `C` aglomera num canto |
+| 23 | [`23_quadtree.py`](./Código/23_quadtree.py) | Quadtree visível, refeita a cada frame; nó acima da capacidade divide em quatro. `[`/`]` profundidade máxima, `C` aglomera, `ESPAÇO` pausa |
+| 23 | [`23_kdtree.py`](./Código/23_kdtree.py) | k-d tree visível: corta pela mediana alternando x e y até a folha. `[`/`]` tamanho da folha, `C` aglomera, `ESPAÇO` pausa |
 
 O plano de ensino completo está em [`Plano_de_Ensino_2026_2.pdf`](./Plano_de_Ensino_2026_2.pdf).
 
